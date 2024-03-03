@@ -13,7 +13,7 @@ public class PlayerResults {
         this.playerResults = playerResults;
     }
 
-    public static PlayerResults of(Names names, Ladder ladder, Results results) {
+    public static PlayerResults of(final Names names, final Ladder ladder, final Results results) {
         Map<Name, Result> playerResults = new LinkedHashMap<>();
         for (final Name name : names.getValues()) {
             Position from = new Position(names.findIndexBy(name));

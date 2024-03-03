@@ -2,7 +2,7 @@ package domain;
 
 public class Position {
 
-    public int value;
+    private int value;
 
     public Position(final int value) {
         this.value = value;
@@ -12,7 +12,7 @@ public class Position {
         return value == 0;
     }
 
-    public boolean isLast(int lineSize) {
+    public boolean isLast(final int lineSize) {
         return value == lineSize;
     }
 

@@ -28,7 +28,7 @@ public class Line {
         }
     }
 
-    private static Bridge findPreviousBridge(List<Bridge> bridges) {
+    private static Bridge findPreviousBridge(final List<Bridge> bridges) {
         if (bridges.isEmpty()) {
             return Bridge.NO_BRIDGE;
         }

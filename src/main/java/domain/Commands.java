@@ -13,11 +13,11 @@ public enum Commands {
         this.value = value;
     }
 
-    public static boolean isTerminate(String command) {
+    public static boolean isTerminate(final String command) {
         return TERMINATE.value.equals(command);
     }
 
-    public static boolean exists(String value) {
+    public static boolean exists(final String value) {
         return Arrays.stream(values())
                 .anyMatch(command -> command.getValue().equals(value));
     }

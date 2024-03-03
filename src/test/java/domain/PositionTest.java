@@ -3,9 +3,8 @@ package domain;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
-
-import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -56,12 +55,10 @@ public class PositionTest {
 
     @DisplayName("주어진 방향으로 위치를 이동한다.")
     @ParameterizedTest
-    @ValueSource(strings = {"LEFT,0", "RIGHT,2", "NONE,1"})
-    void move(String inputs) {
+    @CsvSource(value = {"LEFT,0", "RIGHT,2", "NONE,1"})
+    void move(Direction direction, int expectedPosition) {
         //given
-        Direction direction = Direction.valueOf(List.of(inputs.split(",")).get(0));
         Position position = new Position(1);
-        int expectedPosition = Integer.parseInt(List.of(inputs.split(",")).get(1));
 
         //when
         position.move(direction);
